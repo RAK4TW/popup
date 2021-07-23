@@ -65,3 +65,10 @@ submitRoutine = () => {
 submitBtn.addEventListener('click', ()=>{
     submitRoutine();
 });
+
+window.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        submitRoutine();
+    }
+});
