@@ -266,7 +266,7 @@ button.signup span {
     border:0;
     margin: 30px auto 10px;
     width:100%;
-
+    cursor: pointer;
 }
 
 .thank-you .shop span {
