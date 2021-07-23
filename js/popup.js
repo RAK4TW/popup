@@ -9,6 +9,7 @@ const emailForm = document.querySelector('#emailForm');
 const main = document.querySelector('.main');
 const thankYou = document.querySelector('.thank-you');
 const left = document.querySelector('.left');
+const submitBtn = document.querySelector('.signup');
 let email;
 
 
@@ -16,7 +17,6 @@ popstart.addEventListener('click', () => {
     popup.classList.add('fadeIn');
     displayWrap.classList.add('show');
     popstart.classList.add('hide');
-
 });
 
 initialize = () => {
@@ -24,23 +24,25 @@ initialize = () => {
     displayWrap.classList.remove('show');
     thankYou.classList.remove('show');
     main.classList.remove('hide');
-    email.value = '';
     left.classList.add('primary');
     left.classList.remove('secondary');
     popup.classList.remove('fadeOutIn');
-
+    if(email.value !== '') {
+        email.value = '';
+    }
 }
 
 decline.addEventListener('click', (event) => {
-    initialize();
+  initialize();
 });
 
 
 closeLink.addEventListener('click', () => {
-   initialize();
+  initialize();
 });
 
 emailForm.addEventListener('submit', ()=>{
+
     email = document.querySelector('.email');
     const regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 
