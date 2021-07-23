@@ -27,6 +27,7 @@ initialize = () => {
     left.classList.add('primary');
     left.classList.remove('secondary');
     popup.classList.remove('fadeOutIn');
+    email.setAttribute('placeholder', "EMAIL ADDRESS");
     if(email.value !== '') {
         email.value = '';
     }
@@ -41,12 +42,13 @@ closeLink.addEventListener('click', () => {
   initialize();
 });
 
-emailForm.addEventListener('submit', ()=>{
-
+submitRoutine = () => {
     email = document.querySelector('.email');
     const regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 
-    if (email.value === '' || !regex.test(email.value)) return;
+    if (email.value === '' || !regex.test(email.value)) {
+        email.setAttribute('placeholder', "Please enter a valid email");
+    }
 
     else if (email.value !== '' && regex.test(email.value)) {
        popup.classList.remove('fadeIn');
@@ -57,6 +59,15 @@ emailForm.addEventListener('submit', ()=>{
         left.classList.remove('primary');
         left.classList.add('secondary');
        },1000);
-      
+    }
+}
+
+submitBtn.addEventListener('click', ()=>{
+    submitRoutine();
+});
+
+window.addEventListener('keyup', (event) => {
+    if (event.key === 'Enter') {
+        submitRoutine();
     }
 });
