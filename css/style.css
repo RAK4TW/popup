@@ -1,0 +1,384 @@
+@import url('../css/fonts.css');
+
+body * {
+    box-sizing: border-box;
+}
+
+.popstart {
+    width:100px;
+    height:100px;
+    border-radius:50px;
+    text-align:center;
+    display:block;
+    border:0;
+    font-weight:bold;
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:#2BA58C;
+    color:#ffffff;
+    font: normal normal normal 20px/24px 'Permanent Marker';
+    cursor:pointer;
+}
+
+.popstart.hide {
+    display:none;
+}
+
+#displayWrap {
+    display: none;
+}
+
+#displayWrap.show {
+    display: block;
+}
+
+.main.hide {
+    display:none;
+}
+
+#popup {
+  align-items: center;
+  justify-content: center;
+  position:fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align:center;
+  width:100%;
+  max-width:500px;
+}
+
+.left {
+    position:relative;
+    display:none;
+}
+
+.left.primary {
+    background:url('../assets/pexels-adrianna-calvo-17694@2x.png') center center no-repeat;
+    background-size:cover;
+}
+
+.left.secondary {
+    background:url('../assets/pexels-riciardus-871062@2x.png') center center no-repeat;
+    background-size:cover;
+    
+}
+
+.fadeIn {
+    animation: fadeIn 1s ease-in-out; 
+}
+
+.fadeOutIn {
+    animation: fadeOutIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+  @keyframes fadeOutIn {
+    0% {opacity:1;}
+    50% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+@media screen and (min-width:1024px) {
+    .left {
+        display:block;
+    }
+}
+
+.left .glass-shop {
+    position:absolute;
+    width:105px;
+    height:136px;
+    top:20px;
+    right:0;
+}
+  
+.right {
+    background:url('../assets/Mask@2x.png') top center no-repeat;
+    background-size:cover;
+    padding:20px;
+}
+
+.right.thank-you-active {
+    padding:15px;
+}
+
+
+.right .join {
+    font: normal normal normal 20px/24px 'Proxima Nova';
+    letter-spacing: 0.5px;
+    color: #B87614;
+    margin:0;
+}
+
+.right .discount {
+    font: normal normal normal 45px/65px 'Permanent Marker';
+    letter-spacing: 1.13px;
+    color: #2BA58C;
+    margin:0;
+    line-height:1;
+
+}
+
+.right .shipping {
+    text-align: center;
+    font: normal normal bold 15px/18px 'Proxima Nova Bold';
+    letter-spacing: 0.38px;
+    color: #B87614;
+    margin:0;
+}
+
+.right .shipping span {
+    font: normal normal normal 20px/24px 'Permanent Marker';
+    letter-spacing: 0.5px;
+}
+
+.right .line {
+    background-color: #B87614;
+    height:0.5px;
+    margin:10px 0;
+}
+
+.right .content {
+    text-align: left;
+    font: normal normal normal 16px/19px 'Proxima Nova';
+    letter-spacing: 0px;
+    color: #000000;
+    margin-top:8px;
+    line-height:19px;
+}
+
+.right .content strong {
+    text-align: left;
+    font: normal normal bold 16px/19px 'Proxima Nova';
+    letter-spacing: 0px;
+    color: #B87614;
+}
+
+.right .small {
+    text-align: left;
+    font: normal normal normal 10px/12px 'Proxima Nova';
+    letter-spacing: 0px;
+    color: #010101;
+    padding-top:6px;
+}
+
+.right .small a {
+    color: #010101;
+}
+
+input.email {
+    height: 50px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #A8A8A8;
+    opacity: 1;
+    width:100%;
+    font: normal normal normal 16px/19px 'Proxima Nova';
+    letter-spacing: 0px;
+    padding-left:17px;
+    
+}
+
+button.decline {
+    height: 50px;
+    background: #B87614 0% 0% no-repeat padding-box;
+    border-radius: 5px;
+    opacity: 0.26;
+    border:0;
+    width:38.5%;
+    margin:10px 1% 0 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+button.decline span{
+    font: normal normal 100 15px/18px 'Proxima Nova Thin';
+    letter-spacing: 0.38px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    opacity: 1;
+}
+
+button.signup {
+    height: 50px;
+    background: #2BA58C 0% 0% no-repeat padding-box;
+    border-radius: 5px;
+    width:58%;
+    border:0;
+    margin:10px 0 0 1%;
+    cursor: pointer;
+}
+
+button.signup span {
+    text-align: center;
+    font: normal normal 600 15px/18px 'Proxima Nova Bold';
+    letter-spacing: 0.38px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+
+.thank-you {
+    height:100%;
+    border: 1px solid #B87614;
+    padding:0 15px;
+    display:none;
+}
+
+.thank-you.show {
+    display:block;
+}
+
+.thank-you-text {
+    font: normal normal normal 45px/65px Permanent Marker;
+    letter-spacing: 1.13px;
+    color: #2BA58C;
+    line-height:1;
+    margin:30px 0;
+}
+
+.thank-you .inbox {
+    font: normal normal normal 25px/30px Proxima Nova;
+    letter-spacing: 0.63px;
+    color: #B87614;
+    margin:0;
+}
+
+.thank-you .deal {
+    font: normal normal bold 20px/24px Proxima Nova;
+    letter-spacing: 0.5px;
+    color: #B87614;
+    margin:0;
+}
+
+.thank-you .shop {
+    background: #2BA58C 0% 0% no-repeat padding-box;
+    border-radius: 5px;
+    max-width: 162px;
+    height: 40px;
+    border:0;
+    margin: 30px auto 10px;
+    width:100%;
+
+}
+
+.thank-you .shop span {
+    font: normal normal 600 15px/18px Proxima Nova;
+    letter-spacing: 0.38px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+.thank-you .close {
+    display:block;
+    font: normal normal normal 20px/24px Proxima Nova;
+    letter-spacing: 0px;
+    color: #000000;
+    text-decoration: none;
+    padding: 5px 0 20px;
+}
+
+.thank-you .close span {
+    border-bottom:1px solid #000000;
+}
+
+
+@media screen and (min-width:1024px) {
+    #popup {
+        max-width:1000px;
+        display:flex;
+    }
+    .left {
+        width:60%;
+        display:block;
+    }
+    .right {
+        width:40%;
+    }
+    .left, .right {
+        height:400px
+    }
+
+    .right .join {
+        font: normal normal normal 25px/30px Proxima Nova;
+        letter-spacing: 0.63px;
+    }
+
+    .right .discount {
+        font: normal normal normal 55px/80px Permanent Marker;
+        letter-spacing: 1.38px;
+        line-height:1;
+
+    }
+
+    .right .shipping {
+        font: normal normal bold 20px/24px Proxima Nova;
+        letter-spacing: 0.5px;
+    }
+
+    .right .content {
+        font: normal normal normal 18px/23px 'Proxima Nova';
+        letter-spacing: 0px;
+        line-height:23px;
+    }
+    
+    .right .content strong {
+        font: normal normal bold 18px/23px 'Proxima Nova Bold';
+        letter-spacing: 0px;
+    }
+
+    button.decline span{
+        font: normal normal 300 20px/24px 'Proxima Nova';
+        letter-spacing: 0.5px;
+    }
+
+    button.signup span {
+        font: normal normal 600 20px/24px 'Proxima Nova';
+        letter-spacing: 0.5px;
+    }
+
+    .thank-you-text {
+        font: normal normal normal 55px/80px Permanent Marker;
+        letter-spacing: 1.38px;
+        color: #2BA58C;
+    }
+    
+    .thank-you .inbox {
+        font: normal normal normal 25px/30px Proxima Nova;
+        letter-spacing: 0.63px;
+    }
+    
+    .thank-you .deal {
+        font: normal normal bold 20px/24px Proxima Nova;
+        letter-spacing: 0.5px;
+    }
+    
+    .thank-you .shop {
+        max-width: 204px;
+        height: 50px;
+        margin: 50px auto 10px;
+        cursor: pointer;
+
+    }
+    
+    .thank-you .shop span {
+        font: normal normal 600 20px/24px Proxima Nova;
+        letter-spacing: 0.5px;
+        color: #FFFFFF;
+    }
+    
+    .thank-you .close {
+        font: normal normal normal 20px/24px Proxima Nova;
+        letter-spacing: 0px;
+    }
+    
+    .thank-you .close span {
+        border-bottom:1px solid #000000;
+    }
+}
