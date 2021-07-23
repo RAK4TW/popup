@@ -65,9 +65,3 @@ submitRoutine = () => {
 submitBtn.addEventListener('click', ()=>{
     submitRoutine();
 });
-
-window.addEventListener('keyup', (event) => {
-    if (event.key === 'Enter') {
-        submitRoutine();
-    }
-});
